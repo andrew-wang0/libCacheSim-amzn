@@ -67,12 +67,13 @@ int main(int argc, char **argv) {
   printf("\n");
   for (int i = 0; i < args.n_cache_size * args.n_eviction_algo; i++) {
     snprintf(output_str, 1024,
-             "%s %s cache size %8ld%s, %lld req, miss ratio %.4lf, byte miss "
-             "ratio %.4lf\n",
+             "%s, %s, cache_size: %8ld%s, req: %lld, miss_ratio: %.6lf, hit_ratio: %.6lf, byte_miss_"
+             "ratio: %.4lf\n",
              args.reader->trace_path, result[i].cache_name,
              (long)(result[i].cache_size / size_unit), size_unit_str,
              (long long)result[i].n_req,
              (double)result[i].n_miss / (double)result[i].n_req,
+             1 - ((double)result[i].n_miss / (double)result[i].n_req),
              (double)result[i].n_miss_byte / (double)result[i].n_req_byte);
     printf("%s", output_str);
     fprintf(output_file, "%s", output_str);
