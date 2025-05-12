@@ -21,5 +21,4 @@ sftp-config.json
 .lint-logs/
 
 # output files
-out
-out.csv
+/run/results/**

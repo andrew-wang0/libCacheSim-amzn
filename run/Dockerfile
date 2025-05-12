@@ -1,6 +1,6 @@
 FROM ubuntu:22.04 AS builder
 RUN apt-get update && apt-get install -y build-essential cmake git libglib2.0-dev libgoogle-perftools-dev libzstd-dev && rm -rf /var/lib/apt/lists/*
-RUN git clone https://github.com/1a1a11a/libCacheSim.git /src && mkdir /src/_build && cd /src/_build && cmake .. && make -j$(nproc) && make install
+RUN git clone https://github.com/andrew-wang0/libCacheSim-amzn.git /src && mkdir /src/_build && cd /src/_build && cmake .. && make -j$(nproc) && make install
 
 FROM ubuntu:22.04
 RUN apt-get update && apt-get install -y libglib2.0-0 libgoogle-perftools4 libzstd1 && rm -rf /var/lib/apt/lists/*
