@@ -5,7 +5,7 @@
 ./run-docker.sh <dataset-file>
 ```
 
-### Run Locally (requires dependencies)
+### Run Locally (requires dependencies & build)
 ```bash
 ./run.sh <dataset-file>
 ```
